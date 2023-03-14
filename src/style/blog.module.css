@@ -1,0 +1,40 @@
+.card_box{
+    width: 60%;
+    background-color: whitesmoke;
+    padding: 1rem;
+    box-shadow: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .card_box h2{
+    font-size: 40px;
+    text-align: center;
+  }
+  .card{
+    margin: 1rem;
+    width: 90%;
+    background-color: rgb(225, 223, 223);
+    padding: 2rem;
+  }
+  .card h4{
+    font-size: 24px;
+    margin: 1rem;
+  }
+  .card p{
+    margin: 1rem;
+    font-size: 16px;
+  }
+  .center{
+    justify-content: center;
+    display: inline-block;
+    margin: 2rem;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+  }

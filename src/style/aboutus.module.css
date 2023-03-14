@@ -1,0 +1,30 @@
+
+.container{
+    width: 60%;
+    /* align-items: center;
+    
+    justify-content: center;
+    align-content: center; */
+    margin: auto;
+
+}
+.container h1{
+    font-size: 40px;
+    margin: 1rem;
+    text-align: center;
+}
+.container h3{
+    font-size: 30px;
+    margin: 1rem;
+}
+.container p{
+    font-size: 24px;
+    margin: 1rem;
+}
+/* .container ul{
+    margin: 1rem;
+} */
+.container ul li{
+    font-size: 30px;
+    margin: 0 5rem ;
+}

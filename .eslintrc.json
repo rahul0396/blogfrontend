@@ -1,0 +1,12 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "semi":"off",
+    "indent":"off",
+    "react/jsx-key":"off",
+    "react-hooks/exhaustive-deps":"off",
+    "no-unused-vars":"off",
+    "react-hooks/rules-of-hooks": "off"
+
+  }
+}
