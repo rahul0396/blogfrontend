@@ -4,24 +4,36 @@ import styles from '../../style/blog.module.css';
 import Head from 'next/head';
 import Link from 'next/link'
 
-const Blog = () => {
+export const getStaticProps=async()=>{
+  const res=await fetch('https://dailyblog-2i4c.onrender.com/api/blogs');
+  const data= await res.json();
+   return { 
+    props:{
+      data,
+    }
+   }
+
+}
+
+
+
+
+
+const Blog = ({data}) => {
  
 
-  const[blogdata,setBlogdata]=useState([]);
+  // const[blogdata,setBlogdata]=useState([]);
   
-  // fetch('../blogdata/how-to-learn-javascript')
-  // .then(res=>res.json())
-  // .then(data=> console.log(data))
-  useEffect(()=>{
-      fetch('https://dailyblog-2i4c.onrender.com/api/blogs')
-    .then(res=>res.json())
-    .then(data=>{ 
-                  setBlogdata(data)});
+//   useEffect(()=>{
+//       fetch('https://dailyblog-2i4c.onrender.com/api/blogs')
+//     .then(res=>res.json())
+//     .then(data=>{ 
+//                   setBlogdata(data)});
                   
 
-  }
-,[]);
-console.log(blogdata);
+//   }
+// ,[]);
+// console.log(blogdata);
   
   return (
   <>
@@ -52,9 +64,11 @@ console.log(blogdata);
     <div className={styles.card_box}>
           <h2>Blog Post</h2>
           
-         { blogdata.data?.map((a)=>
-         (<Link href={{pathname:`/blog/${a.id}`, query:{heading:a.attributes.heading, content:a.attributes.content}}}>
-         <div  key={a.id}className={styles.card}>
+         { data.data?.map((a)=>
+         (
+        //  <Link href={{pathname:`/blog/${a.id}` , query:{heading:a.attributes.heading, content:a.attributes.content} }}>
+         <Link key={a.id}  href={`/blog/${a.id}`}>
+         <div   className={styles.card}>
             <h4>{a.attributes.heading}</h4>
             <p>{a.attributes.content}</p>
           </div>
